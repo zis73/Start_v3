@@ -13,9 +13,9 @@ public class Robot implements Mob {
     }
 
     @Override
-    public void Punch(int damage) {
-        damage = 1600;
-        System.out.println("Punch");
+    public void Punch() {
+       int  damage = 1600;
+        System.out.println("Punch: " + damage);
     }
 
     @Override

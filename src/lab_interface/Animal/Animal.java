@@ -12,8 +12,8 @@ public class Animal implements Mob {
     }
 
     @Override
-    public void Punch(int damage) {
-        damage = 1350;
+    public void Punch() {
+        int damage = 1350;
         System.out.println("Punch");
     }
 

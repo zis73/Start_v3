@@ -3,7 +3,7 @@ package lab_interface;
 public interface Mob {
     void Run(int speed);
 
-    void Punch(int damage);
+    void Punch();
 
     void Swim(int air);
 

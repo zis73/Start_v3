@@ -11,10 +11,11 @@ public class Slimes implements Mob {
     }
 
     @Override
-    public void Punch(int damage) {
-        damage = 700;
+    public void Punch() {
+        int damage = 700;
         System.out.println("Punch");
     }
+
 
     @Override
     public void Swim(int air) {
