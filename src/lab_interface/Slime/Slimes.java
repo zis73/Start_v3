@@ -4,9 +4,10 @@ import lab_interface.Mob;
 
 public class Slimes implements Mob {
     String name;
+
     @Override
-    public void Run(int speed) {
-        speed = 70;
+    public void Run() {
+        int speed = 70;
         System.out.println("Run");
     }
 
@@ -18,31 +19,33 @@ public class Slimes implements Mob {
 
 
     @Override
-    public void Swim(int air) {
-        air = 100;
-        System.out.println("Swim");
+    public int Swim() {
+        int air = 100;
+        return 100;
+        //System.out.println("Swim");
     }
 
     @Override
-    public void Fly(int time) {
-        time = 0;
+    public void Fly() {
+        int time = 0;
         System.out.println("Fly");
     }
 
     @Override
-    public void Jump(int jump) {
-        jump = 1;
-        System.out.println("Jump");
+    public int Jump() {
+        int jump = 1;
+        return 1;
+        //System.out.println("Jump");
     }
 
     @Override
-    public void Hp(int hp) {
-        hp = 15000;
+    public void Hp() {
+        int hp = 15000;
         System.out.println("Hp");
     }
 
     @Override
-    public void Shoot(int range) {
+    public void Shoot() {
 
     }
 }

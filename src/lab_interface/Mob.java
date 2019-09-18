@@ -1,17 +1,17 @@
 package lab_interface;
 
 public interface Mob {
-    void Run(int speed);
+    void Run();
 
     void Punch();
 
-    void Swim(int air);
+    int Swim();
 
-    void Fly(int time);
+    void Fly();
 
-    void Jump(int jump);
+    int Jump();
 
-    void Hp(int hp);
+    void Hp();
 
-    void Shoot(int range);
+    void Shoot();
 }
