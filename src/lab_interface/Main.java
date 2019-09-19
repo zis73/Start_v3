@@ -8,7 +8,7 @@ import lab_interface.Robot.Robot;
 public class Main {
     public static void main(String[] args) {
         Droid droid = new Droid("C3PO");
-       // droid.Punch();
+        // droid.Punch();
         System.out.println("Level:1");
         Wall wall = new Wall(14);
         wall.doIt();

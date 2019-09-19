@@ -10,18 +10,20 @@ public class Swimpool implements Obstracle {
     Droid droid = new Droid("C3PO");
     Tiger tiger = new Tiger("Ширхан");
     BigSlime bigSlime = new BigSlime("Chaki");
-    public Swimpool(int width){
+
+    public Swimpool(int width) {
         this.width = width;
     }
+
     @Override
     public void doIt() {
-        if (droid.Swim() <= width){
+        if (droid.Swim() <= width) {
             System.out.println("Дроид заржавел");
         }
-        if (tiger.Swim() >= width){
+        if (tiger.Swim() >= width) {
             System.out.println("Киска стала мокрой");
         }
-        if (bigSlime.Swim() >= width){
+        if (bigSlime.Swim() >= width) {
             System.out.println("Слизь переплыла препятсвие");
         }
     }

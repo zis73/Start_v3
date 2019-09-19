@@ -9,6 +9,6 @@ public class Teams {
     Droid droid = new Droid("Droid");
     Tiger tiger = new Tiger("Tiger");
     BigSlime bigSlime = new BigSlime("BigSlime");
-    Mob[] team = {tiger,droid,bigSlime};
+    Mob[] team = {tiger, droid, bigSlime};
 
 }
