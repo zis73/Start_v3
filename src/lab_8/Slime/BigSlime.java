@@ -1,4 +1,4 @@
-package lab_interface.Slime;
+package lab_8.Slime;
 
 public class BigSlime extends Slimes {
     public BigSlime(String name){

@@ -1,27 +1,27 @@
-package lab_interface.Animal;
+package lab_8.Slime;
 
-import lab_interface.Mob;
+import lab_8.Mob;
 
-public class Animal implements Mob {
+public class Slimes implements Mob {
     String name;
-    int age;
 
     @Override
     public void Run() {
-        int speed = 450;
+        int speed = 70;
         System.out.println("Run");
     }
 
     @Override
     public void Punch() {
-        int damage = 1350;
+        int damage = 700;
         System.out.println("Punch");
     }
 
+
     @Override
     public int Swim() {
-        int air = 10;
-        return 10;
+        int air = 100;
+        return 100;
         //System.out.println("Swim");
     }
 
@@ -33,14 +33,14 @@ public class Animal implements Mob {
 
     @Override
     public int Jump() {
-        int jump = 17;
-        return 17;
-        // System.out.println("Jump");
+        int jump = 1;
+        return 1;
+        //System.out.println("Jump");
     }
 
     @Override
     public void Hp() {
-        int hp = 7000;
+        int hp = 15000;
         System.out.println("Hp");
     }
 

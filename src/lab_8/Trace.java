@@ -1,9 +1,7 @@
-package lab_interface;
+package lab_8;
 
-import lab_interface.Level.Swimpool;
-import lab_interface.Level.Wall;
-
-import java.util.ArrayList;
+import lab_8.Level.Swimpool;
+import lab_8.Level.Wall;
 
 public class Trace {
     Swimpool swimpool = new Swimpool(9);

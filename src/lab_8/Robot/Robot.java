@@ -1,46 +1,46 @@
-package lab_interface.Slime;
+package lab_8.Robot;
 
-import lab_interface.Mob;
+import lab_8.Mob;
 
-public class Slimes implements Mob {
+public class Robot implements Mob {
     String name;
+    float charge;
 
     @Override
     public void Run() {
-        int speed = 70;
+        int speed = 160;
         System.out.println("Run");
     }
 
     @Override
     public void Punch() {
-        int damage = 700;
-        System.out.println("Punch");
+        int damage = 1600;
+        System.out.println("Punch: " + damage);
     }
-
 
     @Override
     public int Swim() {
-        int air = 100;
-        return 100;
+        int air = 0;
+        return 0;
         //System.out.println("Swim");
     }
 
     @Override
     public void Fly() {
-        int time = 0;
+        int time = 280;
         System.out.println("Fly");
     }
 
     @Override
     public int Jump() {
-        int jump = 1;
-        return 1;
+        int jump = 15;
+        return 15;
         //System.out.println("Jump");
     }
 
     @Override
     public void Hp() {
-        int hp = 15000;
+        int hp = 10000;
         System.out.println("Hp");
     }
 

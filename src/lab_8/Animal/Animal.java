@@ -1,46 +1,46 @@
-package lab_interface.Robot;
+package lab_8.Animal;
 
-import lab_interface.Mob;
+import lab_8.Mob;
 
-public class Robot implements Mob {
+public class Animal implements Mob {
     String name;
-    float charge;
+    int age;
 
     @Override
     public void Run() {
-        int speed = 160;
+        int speed = 450;
         System.out.println("Run");
     }
 
     @Override
     public void Punch() {
-        int damage = 1600;
-        System.out.println("Punch: " + damage);
+        int damage = 1350;
+        System.out.println("Punch");
     }
 
     @Override
     public int Swim() {
-        int air = 0;
-        return 0;
+        int air = 10;
+        return 10;
         //System.out.println("Swim");
     }
 
     @Override
     public void Fly() {
-        int time = 280;
+        int time = 0;
         System.out.println("Fly");
     }
 
     @Override
     public int Jump() {
-        int jump = 15;
-        return 15;
-        //System.out.println("Jump");
+        int jump = 17;
+        return 17;
+        // System.out.println("Jump");
     }
 
     @Override
     public void Hp() {
-        int hp = 10000;
+        int hp = 7000;
         System.out.println("Hp");
     }
 

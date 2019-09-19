@@ -1,9 +1,8 @@
-package lab_interface;
+package lab_8;
 
-import lab_interface.Animal.Animal;
-import lab_interface.Animal.Tiger;
-import lab_interface.Robot.Droid;
-import lab_interface.Slime.BigSlime;
+import lab_8.Animal.Tiger;
+import lab_8.Robot.Droid;
+import lab_8.Slime.BigSlime;
 
 public class Teams {
     Droid droid = new Droid("Droid");

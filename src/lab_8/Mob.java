@@ -1,4 +1,4 @@
-package lab_interface;
+package lab_8;
 
 public interface Mob {
     void Run();

@@ -1,9 +1,8 @@
-package lab_interface;
+package lab_8;
 
-import lab_interface.Level.Swimpool;
-import lab_interface.Level.Wall;
-import lab_interface.Robot.Droid;
-import lab_interface.Robot.Robot;
+import lab_8.Level.Swimpool;
+import lab_8.Level.Wall;
+import lab_8.Robot.Droid;
 
 public class Main {
     public static void main(String[] args) {
