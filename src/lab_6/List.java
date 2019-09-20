@@ -17,17 +17,33 @@ public class List {
     }
 
     public void RemoveLast() {
-        //node.next.a--;
+        Node _last = last;
+        Node remove;
+        // _last= _last.next;
+        //last = null; удаляет все ячейки
+        if (last.next == null) {
+            remove = last;
+            last.next = last;
+            remove = null;
+        }
     }
 
     public void Count() {
-
+        //8 должен вывести
+        int count = 0;
+        Node _last = last;
+        while (_last != null) {
+            _last = _last.next;
+            count++;
+        }
+        System.out.println("Общее кол-во ячеек:" + count);
     }
-    public void Print(){
-        while (last != null){
-            System.out.println(last);
-            last.next = last;
-            System.out.println(last);
+
+    public void Print() {
+        Node _last = last;
+        while (_last != null) {
+            System.out.println(_last.a);
+            _last = _last.next;
         }
     }
 }
