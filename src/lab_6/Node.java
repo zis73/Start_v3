@@ -5,9 +5,8 @@ public class Node {
     Node next;
 
 
-    public void Node(){
+    public Node(int a){
         this.a = a;
-        this.next = next;
        // this.first = first;
         //this.last = last;
     }

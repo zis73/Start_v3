@@ -4,18 +4,16 @@ public class List {
     static Node first;
     static Node last;
 
-    public void Add() {
-        Node newNode = new Node();
+    public void Add(int a) {
+        Node newNode = new Node(a);
         if (first == null) {
-            newNode.next = null;
             first = newNode;
             last = newNode;
+            newNode.next = null;
         } else {
-            last.next = newNode.next;
-           // newNode.next тут изменить ;
+            newNode.next = last;
             last = newNode;
         }
-        System.out.println("dfdf");
     }
 
     public void RemoveLast() {
@@ -24,5 +22,12 @@ public class List {
 
     public void Count() {
 
+    }
+    public void Print(){
+        while (last != null){
+            System.out.println(last);
+            last.next = last;
+            System.out.println(last);
+        }
     }
 }
