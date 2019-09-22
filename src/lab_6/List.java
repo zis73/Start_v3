@@ -17,16 +17,14 @@ public class List {
     }
 
     public void RemoveLast() {
-        Node _last = last;
-        Node remove;
-        // _last= _last.next;
-        //last = null; удаляет все ячейки
-        if (last.next == null) {
+        Node remove = null;
+        if (last.next != null) {
             remove = last;
-            last.next = last;
-            remove = null;
+            last = last.next;
         }
+        remove.next = null;
     }
+
 
     public void Count() {
         //8 должен вывести

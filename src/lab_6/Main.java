@@ -15,5 +15,11 @@ public class Main {
         list.RemoveLast();
         list.Print();
         list.Count();
+        list.RemoveLast();
+        list.Print();
+        list.Count();
+        list.RemoveLast();
+        list.Print();
+        list.Count();
     }
 }
