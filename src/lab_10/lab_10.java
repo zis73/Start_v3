@@ -1,17 +1,28 @@
 package lab_10;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class lab_10 {
     public static void main(String[] args) {
-        int[] arr = {1, 5, -3, 44, 77, 100, 4, -8};//-8,-3,1,4,5,44,77,100
-        int[] result;
-        int j = 0;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введи длину массива: ");
+        int n = scan.nextInt();
 
+        int[] arr = new int[n];
+
+        RandomInit(arr, n);
+        PrintArr(arr, n);
+        Merge(arr);
+
+        System.out.println("------");
+
+        System.nanoTime();
+        long MergeSort = System.nanoTime();
     }
 
 
-    public int[] Merge(int[] arr) {
+    public static int[] Merge(int[] arr) {
         int len = arr.length / 2;
         int[] first = new int[len];
         int[] second = new int[first.length - len];
@@ -23,13 +34,43 @@ public class lab_10 {
         }
         Merge(first);
         Merge(second);
-//sortMerge();
+        MergeSort(arr,first,second);
         return arr;
     }
+
+    public static void RandomInit(int[] arr, int n) {
+        Random rand = new Random();
+        for (int i = 0; i < n; i++) {
+            arr[i] = rand.nextInt(1000000);
+        }
+    }
+
+    public static void MergeSort(int[] arr, int[] first, int[] second) {
+        int a = 0;
+        int f = 0;
+        int s = 0;
+        while (f < first.length && s < second.length) {
+            if (second[s] < first[f]){
+                arr[a] = second[s];
+                s++;
+            }else {
+                arr[a] = first[f];
+                f++;
+            }
+            a++;
+        }
+    }
+
+    static void PrintArr(int[] arr, int n) {
+        int b = 0;
+        for (int i = 0; i < n; i++) {
+            System.out.println(arr[i] + " ");
+        }
+        System.out.println();
+
+    }
 }
-// public static void RandomInit(int[] mas, int n) {
-//
-// }
+
 
 // int[] mas = new int[100];
 // for (int i = 0; i < mas.length; i++) {
