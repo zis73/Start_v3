@@ -9,11 +9,11 @@ public class Triangle {
     }
 
     public static void doIt() {
-        Perimetr(3, 4, 1);
+        Perimeter(3, 4, 1);
         Square(3, 5, 4);
     }
 
-    public static void Perimetr(double a, double b, double c) {
+    public static void Perimeter(double a, double b, double c) {
         double P;
         P = a + b + c;
         System.out.println("Периметр: " + P);

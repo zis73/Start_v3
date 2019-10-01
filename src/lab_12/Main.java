@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
-        int[] arr =new int[n];
-        RandomInit(arr,n);
+        int[] arr = new int[n];
+        RandomInit(arr, n);
         //int[] arr = {1, 5, 6, 8, 9, 10, 2, 4};
         for (int i = 0; i < arr.length; i++) {
             int least = i;
