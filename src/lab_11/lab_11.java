@@ -2,11 +2,38 @@ package lab_11;
 
 public class lab_11 {
     public static void main(String[] args) {
-        int[] arr = {1, 5, 6, 8, 2, 3, 4, 7};
-        for (int i = 1; i < arr.length; i++) {
-            int first = arr[i];
-            for (int j = i-1; j < arr.length && arr[j] > first ; j++){
-                arr[j] = first;
+
+        int[] arr = {8,1,3,5,7,6,4};
+        /*
+         * По очереди будем просматривать все подмножества элементов массива (0 -
+         * последний, 1-последний, 2-последний,...)
+         */
+        for (int i = 0; i < arr.length; i++) {
+            /*
+             * Предполагаем, что первый элемент (в каждом подмножестве элементов)
+             * является минимальным
+             */
+            int min = arr[i];
+            int min_i = i;
+            /*
+             * В оставшейся части подмножества ищем элемент, который меньше
+             * предположенного минимума
+             */
+            for (int j = i + 1; j < arr.length; j++) {
+                // Если находим, запоминаем его индекс
+                if (arr[j] < min) {
+                    min = arr[j];
+                    min_i = j;
+                }
+            }
+            /*
+             * Если нашелся элемент, меньший, чем на текущей позиции, меняем их
+             * местами
+             */
+            if (i != min_i) {
+                int tmp = arr[i];
+                arr[i] = arr[min_i];
+                arr[min_i] = tmp;
             }
             System.out.println(arr[i]);
         }
