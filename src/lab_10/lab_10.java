@@ -14,7 +14,7 @@ public class lab_10 {
         RandomInit(arr, n);
         PrintArr(arr, n);
         Merge(arr);
-
+        PrintArr(arr, n);
         System.out.println("------");
 
         System.nanoTime();
@@ -23,18 +23,22 @@ public class lab_10 {
 
 
     public static int[] Merge(int[] arr) {
-        int len = arr.length / 2;
-        int[] first = new int[len];
-        int[] second = new int[first.length - len];
+
         if (arr.length <= 1) {
             return arr;
-        } else {
-            System.arraycopy(arr, 0, first, 0, len);
-            System.arraycopy(arr, first.length, second, 0, second.length);
         }
+
+        int len = arr.length / 2;
+        int[] first = new int[arr.length / 2];
+        int[] second = new int[arr.length - len];
+
+        System.arraycopy(arr, 0, first, 0, len);
+        System.arraycopy(arr, first.length, second, 0, second.length);
+
         Merge(first);
         Merge(second);
         MergeSort(arr,first,second);
+
         return arr;
     }
 
@@ -50,15 +54,17 @@ public class lab_10 {
         int f = 0;
         int s = 0;
         while (f < first.length && s < second.length) {
-            if (second[s] < first[f]){
-                arr[a] = second[s];
-                s++;
-            }else {
+            if (first[f] < second[s]){
                 arr[a] = first[f];
                 f++;
+            }else {
+                arr[a] = second[s];
+                s++;
             }
             a++;
         }
+        System.arraycopy(first,f,arr,a,first.length-f);
+        System.arraycopy(second,s,arr,a,second.length-s);
     }
 
     static void PrintArr(int[] arr, int n) {
