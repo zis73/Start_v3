@@ -9,9 +9,9 @@ public class Main {
     }
     public static void NewProduct(){
         String name;
-        BufferedWriter scan = new BufferedWriter();
-        name = scan.toString();
-        System.out.println(name);
+        //BufferedWriter scan = new BufferedWriter();
+       // name = scan.toString();
+        //System.out.println(name);
     }
     public static void Purchase(){
 
