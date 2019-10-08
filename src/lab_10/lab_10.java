@@ -37,7 +37,7 @@ public class lab_10 {
 
         Merge(first);
         Merge(second);
-        MergeSort(arr,first,second);
+        MergeSort(arr, first, second);
 
         return arr;
     }
@@ -54,17 +54,17 @@ public class lab_10 {
         int f = 0;
         int s = 0;
         while (f < first.length && s < second.length) {
-            if (first[f] < second[s]){
+            if (first[f] < second[s]) {
                 arr[a] = first[f];
                 f++;
-            }else {
+            } else {
                 arr[a] = second[s];
                 s++;
             }
             a++;
         }
-        System.arraycopy(first,f,arr,a,first.length-f);
-        System.arraycopy(second,s,arr,a,second.length-s);
+        System.arraycopy(first, f, arr, a, first.length - f);
+        System.arraycopy(second, s, arr, a, second.length - s);
     }
 
     static void PrintArr(int[] arr, int n) {

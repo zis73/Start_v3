@@ -16,5 +16,5 @@ public class rightTriangle extends Triangle {
         else {
             System.out.println("Не верно, квадрат гипотенузы не равен сумме квадратов катетов ");
         }
-    }
+     }
 }
