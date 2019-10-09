@@ -10,7 +10,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
 //        NewProduct();
 //        Purchase();
-        SaleReport();
+//        SaleReport();
+        Product();
     }
 
     public static void NewProduct() throws IOException {
@@ -34,8 +35,20 @@ public class Main {
     }
 
     public static void SaleReport/*отчет*/() {
+
+    }
+
+    public static void Product() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите продукт");
+        String name = reader.readLine();
+        String price = reader.readLine();
+        String amount = reader.readLine();
         ArrayList product = new ArrayList();
-        product.add(0,"Simens");
+        product.add("Name:" + name);
+        product.add("Price:" + price);
+        product.add("Amount:" + amount);
         System.out.println(product);
     }
+
 }
