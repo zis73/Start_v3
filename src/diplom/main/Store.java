@@ -13,39 +13,26 @@ public class Store {
     public static void main(String[] args) throws IOException {
 
         NewProduct(new Telephone("yotaPhone", "pink", 123000, 12));
-        NewProduct(new Telephone("myPhone", "pink", 123000, 12));
-//        Purchase();
-//        SaleReport();
-//        Product();
+        NewProduct(new Telephone("myPhone", "pink", 12000, 12));
+
     }
 
     public static void NewProduct(Telephone telephone) throws IOException {
-        //Telephone telephone = new Telephone("Iphone", "black", 45000, 360);
-       // Telephone iphone = new Telephone("Iphone20", "asd", 123000, 12);
         //list.add(telephone);
-
-        if (list.size() == 0 && telephone.price != 0) {
+        ScanInfo scan = new ScanInfo();
+        if (list.size() == 0 /*&& telephone.price != 0*/) {
             list.add(telephone);
         }
-
         for (int i = 0; i < list.size(); i++) {
-
             if (list.get(i).name.equals(telephone.name) && list.get(i).color.equals(telephone.color)) {
                 list.get(i).amount += telephone.amount;
             } else {
                 list.add(telephone);
             }
-
-            System.out.println(list.get(i).name + " " + list.get(i).color +
-                    " " + list.get(i).price + " " + list.get(i).amount);
+            System.out.println(list.get(i).name + " " + list.get(i).color + " " + list.get(i).price + " " + list.get(i).amount);
         }
     }
 
-
-    //        for (int i = 0; i < list.size(); i++) {
-//            list.get(i).name.equals(telephone.name);
-//            list.get(i).amount += telephone.amount;
-//        }
     public static void Purchase /*покупка*/() throws IOException {
 
     }
