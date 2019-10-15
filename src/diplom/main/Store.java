@@ -9,17 +9,18 @@ import java.util.ArrayList;
 
 public class Store {
     static ArrayList<Telephone> list = new ArrayList<>();
+    static ScanInfo scan = new ScanInfo();
+    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
 
-        NewProduct(new Telephone("yotaPhone", "pink", 123000, 12));
-        NewProduct(new Telephone("myPhone", "pink", 12000, 12));
-
+        NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
+        //NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
     }
 
     public static void NewProduct(Telephone telephone) throws IOException {
         //list.add(telephone);
-        ScanInfo scan = new ScanInfo();
+
         if (list.size() == 0 /*&& telephone.price != 0*/) {
             list.add(telephone);
         }
@@ -30,6 +31,11 @@ public class Store {
                 list.add(telephone);
             }
             System.out.println(list.get(i).name + " " + list.get(i).color + " " + list.get(i).price + " " + list.get(i).amount);
+        }
+        System.out.println("Хотите добавить еще? да/нет");{
+            if (reader.readLine() == "да"){
+                NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
+            }
         }
     }
 

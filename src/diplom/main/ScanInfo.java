@@ -7,10 +7,11 @@ import java.io.InputStreamReader;
 public class ScanInfo {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private String name;
-    private String color ;
+    private String color;
     private int price;
     private int amount;
-    public ScanInfo(String name,String color, int price, int amount) {
+
+    public ScanInfo(/*String name, String color, int price, int amount*/) {
         this.name = name;
         this.color = color;
         this.price = price;
@@ -20,25 +21,68 @@ public class ScanInfo {
     public String getName() {
         return name;
     }
-    public void  setName() throws IOException {
+
+    public String setName() throws IOException {
+        System.out.println("Введите название:");
         this.name = reader.readLine();
+        return name;
     }
-    public String getColor(){
+
+    public String getColor() {
         return color;
     }
-    public void setColor() throws IOException {
+
+    public String setColor() throws IOException {
+        System.out.println("Введите цвет:");
         this.color = reader.readLine();
+        return color;
     }
-    public int getPrice(){
+
+    public int getPrice() {
         return price;
     }
-    public void setPrice() throws IOException {
-        this.price = Integer.parseInt(reader.readLine());
+
+    public int setPrice() throws IOException {
+        System.out.println("Введите цену:");
+        String text = reader.readLine();
+        if (isInteger(text)) {
+            this.price = Integer.parseInt(text);
+            if (price < 1) {
+                System.out.println("Цена не может быть меньше 0");
+                setPrice();
+            }
+        }else{
+            setPrice();
+        }
+        return price;
     }
-    public int getAmount(){
+
+    public int getAmount() {
         return amount;
     }
-    public void setAmount() throws IOException {
-        this.amount = Integer.parseInt(reader.readLine());
+
+    public int setAmount() throws IOException {
+        System.out.println("Введите кол-во:");
+        String text = reader.readLine();
+        if (isInteger(text)) {
+            this.amount = Integer.parseInt(text);
+            if (amount < 1) {
+                System.out.println("Цена не может быть меньше 0");
+                setAmount();
+            }
+        }else{
+            setAmount();
+        }
+        return amount;
+    }
+
+    static boolean isInteger(String string) {
+        try {
+            Integer.valueOf(string);
+            return true;
+        } catch (NumberFormatException e) {
+            System.out.println("Введите числа!");
+            return false;
+        }
     }
 }
