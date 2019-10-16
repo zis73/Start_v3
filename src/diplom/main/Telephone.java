@@ -18,15 +18,3 @@ public class Telephone {
         this.amount = amount;
     }
 }
-//public static void Telephone() throws IOException {
-//        ArrayList<String> product = new ArrayList<>();
-//        ArrayList<String> productList = new ArrayList<>();
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-//        String name = reader.readLine();
-//        String price = reader.readLine();
-//        String amount = reader.readLine();
-//        product.add(name);
-//        product.add(price);
-//        product.add(amount);
-//        System.out.println(product);
-//    }

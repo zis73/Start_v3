@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static diplom.main.Store.NewProduct;
+import static diplom.main.Store.scan;
+
 public class ScanInfo {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private String name;
@@ -85,4 +88,13 @@ public class ScanInfo {
             return false;
         }
     }
+    public void hereWeGoAgain() throws IOException {
+        System.out.println("Хотите добавить еще? да/нет");
+        if (reader.readLine().equalsIgnoreCase("да")){
+            NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
+        }
+    }
+
+
+    
 }

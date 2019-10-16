@@ -13,9 +13,7 @@ public class Store {
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
-
-        NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
-        //NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
+        CallMethods();
     }
 
     public static void NewProduct(Telephone telephone) throws IOException {
@@ -30,29 +28,42 @@ public class Store {
             } else {
                 list.add(telephone);
             }
-            System.out.println(list.get(i).name + " " + list.get(i).color + " " + list.get(i).price + " " + list.get(i).amount);
+            System.out.println(list.get(i).name + " " + list.get(i).color + " " + list.get(i).price + " " +
+                    list.get(i).amount);
         }
-        System.out.println("Хотите добавить еще? да/нет");{
-            if (reader.readLine() == "да"){
-                NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
-            }
-        }
+        CallMethods();
+        //scan.hereWeGoAgain();
     }
 
-    public static void Purchase /*покупка*/() throws IOException {
 
+    public static void Purchase /*покупка*/(Telephone telephone) throws IOException {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).name.equals(telephone.name) && list.get(i).color.equals(telephone.color)
+                    && list.get(i).amount > 0){
+                telephone.amount = telephone.amount -list.get(i).amount;
+            }
+            if (!list.get(i).name.equals(telephone.name) && !list.get(i).color.equals(telephone.color)){
+                System.out.println("Такого телефона нет на складе");
+            }
+        }
+        CallMethods();
     }
 
     public static void SaleReport/*отчет*/() {
 
     }
 
-    public static void Product() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Введите продукт");
-        String name = reader.readLine();
-        String price = reader.readLine();
-        String amount = reader.readLine();
-    }
+    public static void CallMethods() throws IOException {
 
+        System.out.print("-|New product|-|Purchase|-|Store|-|Sale Report|-|Quit|-" + '\n' + "Введите запрос:");
+        //int method = Integer.parseInt(reader.readLine());
+        String method = reader.readLine();
+        switch (method) {
+            case "New product": NewProduct(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount())); break;
+            case "Sale Report": SaleReport(); break;
+            case "Purchase": Purchase(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount())); break;//передавать название, цвет
+            case "Store": break;
+            case "Quit": break;
+        }
+    }
 }
