@@ -36,16 +36,8 @@ public class Store {
     }
 
 
-    public static void Purchase /*покупка*/(Telephone telephone) throws IOException {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).name.equals(telephone.name) && list.get(i).color.equals(telephone.color)
-                    && list.get(i).amount > 0){
-                telephone.amount = telephone.amount -list.get(i).amount;
-            }
-            if (!list.get(i).name.equals(telephone.name) && !list.get(i).color.equals(telephone.color)){
-                System.out.println("Такого телефона нет на складе");
-            }
-        }
+    public static void Purchase /*покупка*/() throws IOException {
+
         CallMethods();
     }
 
@@ -53,17 +45,42 @@ public class Store {
 
     }
 
+    public static void Stock() throws IOException {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i).name + " " + list.get(i).color + " " + list.get(i).price + " " +
+                    list.get(i).amount);
+        }
+        CallMethods();
+    }
+
     public static void CallMethods() throws IOException {
 
         System.out.print("-|New product|-|Purchase|-|Store|-|Sale Report|-|Quit|-" + '\n' + "Введите запрос:");
-        //int method = Integer.parseInt(reader.readLine());
         String method = reader.readLine();
         switch (method) {
-            case "New product": NewProduct(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount())); break;
-            case "Sale Report": SaleReport(); break;
-            case "Purchase": Purchase(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount())); break;//передавать название, цвет
-            case "Store": break;
-            case "Quit": break;
+            case "New product":
+                NewProduct(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount()));
+                break;
+            case "Sale Report":
+                SaleReport();
+                break;
+            case "Purchase":
+                Purchase();
+                break;//передавать название, цвет
+            case "Store":
+                Stock();
+            case "Quit":
+                break;
         }
     }
 }
+//for (int i = 0; i < list.size(); i++) {
+//        if (!list.get(i).name.equals(telephone.name) && !list.get(i).color.equals(telephone.color)) {
+//        System.out.println("Такого телефона нет на складе");
+//        }
+//        if (list.get(i).name.equals(telephone.name) && list.get(i).color.equals(telephone.color)
+//        && list.get(i).amount > 0) {
+//        //telephone.amount = telephone.amount - list.get(i).amount;
+//        list.get(i).amount -= telephone.amount;
+//        }
+//        }

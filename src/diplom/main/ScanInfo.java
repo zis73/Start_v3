@@ -94,7 +94,5 @@ public class ScanInfo {
             NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
         }
     }
-
-
     
 }
