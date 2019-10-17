@@ -54,7 +54,7 @@ public class ScanInfo {
                 System.out.println("Цена не может быть меньше 0");
                 setPrice();
             }
-        }else{
+        } else {
             setPrice();
         }
         return price;
@@ -73,7 +73,7 @@ public class ScanInfo {
                 System.out.println("Цена не может быть меньше 0");
                 setAmount();
             }
-        }else{
+        } else {
             setAmount();
         }
         return amount;
@@ -88,11 +88,12 @@ public class ScanInfo {
             return false;
         }
     }
+
     public void hereWeGoAgain() throws IOException {
         System.out.println("Хотите добавить еще? да/нет");
-        if (reader.readLine().equalsIgnoreCase("да")){
-            NewProduct(new Telephone(scan.setName(), scan.setColor(),scan.setPrice(),scan.setAmount()));
+        if (reader.readLine().equalsIgnoreCase("да")) {
+            NewProduct(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount()));
         }
     }
-    
+
 }

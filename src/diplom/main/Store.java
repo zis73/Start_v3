@@ -37,6 +37,34 @@ public class Store {
 
 
     public static void Purchase /*покупка*/() throws IOException {
+        boolean hasPhone = false;
+        int indx = 0;
+        /*for (int i = 0; i < list.size(); i++) {
+            if (!list.get(i).name.equals(scan.setName()) ||
+               (list.get(i).name.equals(scan.setName()) && !list.get(i).color.equals(scan.setColor()))){
+                //System.out.println("Такого телефона нет,введите заново");
+                //Purchase();
+            }else {
+                list.get(i).amount -= scan.setAmount();
+                System.out.println("В наличии осталость:" + list.get(i).amount);
+            }
+        }*/
+        String currName = scan.setName();
+        String currColor = scan.setColor();
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).name.equals(currName) && list.get(i).color.equals(currColor)) {
+                hasPhone = true;
+                indx = i;
+                break;
+            }
+        }
+        if (hasPhone) {
+            list.get(indx).amount -= scan.setAmount();
+        } else {
+            System.out.println("Такого телефона нет,введите заново");
+            Purchase();
+        }
 
         CallMethods();
     }
@@ -50,6 +78,7 @@ public class Store {
             System.out.println(list.get(i).name + " " + list.get(i).color + " " + list.get(i).price + " " +
                     list.get(i).amount);
         }
+
         CallMethods();
     }
 
