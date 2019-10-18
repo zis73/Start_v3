@@ -11,44 +11,33 @@ public class Store {
     static ArrayList<Telephone> list = new ArrayList<>();
     static ScanInfo scan = new ScanInfo();
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    static int purchaseSum = 0;
 
     public static void main(String[] args) throws IOException {
         CallMethods();
     }
 
     public static void NewProduct(Telephone telephone) throws IOException {
-        //list.add(telephone);
-
-        if (list.size() == 0 /*&& telephone.price != 0*/) {
+        if (list.size() == 0) {
             list.add(telephone);
-        }
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).name.equals(telephone.name) && list.get(i).color.equals(telephone.color)) {
-                list.get(i).amount += telephone.amount;
-            } else {
-                list.add(telephone);
+        } else {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).name.equals(telephone.name) && list.get(i).color.equals(telephone.color)) {
+                    list.get(i).amount += scan.getAmount();
+                } else {
+                    list.add(telephone);
+                    break;
+                }
             }
-            System.out.println(list.get(i).name + " " + list.get(i).color + " " + list.get(i).price + " " +
-                    list.get(i).amount);
         }
         CallMethods();
         //scan.hereWeGoAgain();
     }
 
-
     public static void Purchase /*покупка*/() throws IOException {
         boolean hasPhone = false;
         int indx = 0;
-        /*for (int i = 0; i < list.size(); i++) {
-            if (!list.get(i).name.equals(scan.setName()) ||
-               (list.get(i).name.equals(scan.setName()) && !list.get(i).color.equals(scan.setColor()))){
-                //System.out.println("Такого телефона нет,введите заново");
-                //Purchase();
-            }else {
-                list.get(i).amount -= scan.setAmount();
-                System.out.println("В наличии осталость:" + list.get(i).amount);
-            }
-        }*/
+
         String currName = scan.setName();
         String currColor = scan.setColor();
 
@@ -56,21 +45,25 @@ public class Store {
             if (list.get(i).name.equals(currName) && list.get(i).color.equals(currColor)) {
                 hasPhone = true;
                 indx = i;
+                purchaseSum += list.get(i).amount * list.get(i).price;
                 break;
             }
         }
         if (hasPhone) {
             list.get(indx).amount -= scan.setAmount();
+            if (list.get(indx).amount <= 0){
+                list.remove(indx);
+            }
         } else {
             System.out.println("Такого телефона нет,введите заново");
             Purchase();
         }
-
         CallMethods();
     }
 
-    public static void SaleReport/*отчет*/() {
-
+    public static void SaleReport/*отчет*/() throws IOException {
+        System.out.println(purchaseSum);
+        CallMethods();
     }
 
     public static void Stock() throws IOException {
@@ -90,12 +83,12 @@ public class Store {
             case "New product":
                 NewProduct(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount()));
                 break;
-            case "Sale Report":
+            case "Sale report":
                 SaleReport();
                 break;
             case "Purchase":
                 Purchase();
-                break;//передавать название, цвет
+                break;
             case "Store":
                 Stock();
             case "Quit":
@@ -103,13 +96,3 @@ public class Store {
         }
     }
 }
-//for (int i = 0; i < list.size(); i++) {
-//        if (!list.get(i).name.equals(telephone.name) && !list.get(i).color.equals(telephone.color)) {
-//        System.out.println("Такого телефона нет на складе");
-//        }
-//        if (list.get(i).name.equals(telephone.name) && list.get(i).color.equals(telephone.color)
-//        && list.get(i).amount > 0) {
-//        //telephone.amount = telephone.amount - list.get(i).amount;
-//        list.get(i).amount -= telephone.amount;
-//        }
-//        }

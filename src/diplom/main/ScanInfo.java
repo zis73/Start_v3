@@ -14,13 +14,6 @@ public class ScanInfo {
     private int price;
     private int amount;
 
-    public ScanInfo(/*String name, String color, int price, int amount*/) {
-        this.name = name;
-        this.color = color;
-        this.price = price;
-        this.amount = amount;
-    }
-
     public String getName() {
         return name;
     }
