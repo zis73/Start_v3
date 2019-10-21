@@ -76,23 +76,26 @@ public class Store {
     }
 
     public static void CallMethods() throws IOException {
-
-        System.out.print("-|New product|-|Purchase|-|Store|-|Sale Report|-|Quit|-" + '\n' + "Введите запрос:");
-        String method = reader.readLine();
-        switch (method) {
-            case "New product":
-                NewProduct(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount()));
-                break;
-            case "Sale report":
-                SaleReport();
-                break;
-            case "Purchase":
-                Purchase();
-                break;
-            case "Store":
-                Stock();
-            case "Quit":
-                break;
+        try {
+            System.out.print("-|New product|-|Purchase|-|Store|-|Sale Report|-|Quit|-" + '\n' + "Введите запрос:");
+            String method = reader.readLine();
+            switch (method) {
+                case "New product":
+                    NewProduct(new Telephone(scan.setName(), scan.setColor(), scan.setPrice(), scan.setAmount()));
+                    break;
+                case "Sale report":
+                    SaleReport();
+                    break;
+                case "Purchase":
+                    Purchase();
+                    break;
+                case "Store":
+                    Stock();
+                case "Quit":
+                    break;
+            }
+        }catch (IllegalArgumentException a){
+            a.printStackTrace();
         }
     }
 }
