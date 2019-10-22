@@ -51,7 +51,7 @@ public class Store {
         }
         if (hasPhone) {
             list.get(indx).amount -= scan.setAmount();
-            if (list.get(indx).amount <= 0){
+            if (list.get(indx).amount <= 0) {
                 list.remove(indx);
             }
         } else {
@@ -94,7 +94,7 @@ public class Store {
                 case "Quit":
                     break;
             }
-        }catch (IllegalArgumentException a){
+        } catch (IllegalArgumentException a) {
             a.printStackTrace();
         }
     }
