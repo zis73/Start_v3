@@ -2,9 +2,9 @@ package lab_7;
 
 public abstract class BasicPay {
     private String name;
-    private int salary;
+    public double salary;
 
-    public BasicPay(String name, Integer salary) {
+    public BasicPay(String name, Double salary) {
         this.name = name;
         this.salary = salary;
     }
@@ -13,10 +13,10 @@ public abstract class BasicPay {
         return name;
     }
 
-    public Integer getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    abstract void GetSalary(Integer salary);
+    abstract Double GetSalary();
 
 }
